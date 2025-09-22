@@ -6,14 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
     <link rel="stylesheet" href="./css/styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start; /* посилання зліва */
+      }
+
+      a {
+        color: #0077ff;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+        transition: color 0.3s;
+      }
+
+      /* ефект підкреслення при наведенні */
+      a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #0077ff;
+        transition: width 0.3s;
+      }
+
+      a:hover {
+        color: #005fcc;
+      }
+
+      a:hover::after {
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
-
     <main>
-      <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
+      <a href="./1-timer.html">Countdown Timer</a>
+      <a href="./2-snackbar.html">Snackbar Example</a>
     </main>
 
     <load src="./partials/footer.html" />
